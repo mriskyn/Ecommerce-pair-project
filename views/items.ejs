@@ -13,7 +13,8 @@
           <th scope="col">Name</th>
           <th scope="col">Category</th>
           <th scope="col">Quantity</th>
-          <th scope="col">weight</th>
+          <th scope="col">Weight</th>
+          <th scope="col">Price</th>
           <th scope="col" style="text-align: center;">Action</th>
         </tr>
     </thead>
@@ -24,6 +25,7 @@
           <td><%= list.category %></td>
           <td><%= list.quantity %></td>
           <td><%= list.weight %></td>
+          <td><%= list.price %></td>
           <td style="text-align: right;">
             <a href="/items/edit/<%=list.id%>"><button type="button" class="btn btn-primary">Edit</button></a>  
             <a href="/items/delete/<%=list.id%>" onclick="return confirm('Delete this?')"><button type="button" class="btn btn-primary">Delete</button></a>

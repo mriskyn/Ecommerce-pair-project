@@ -8,6 +8,7 @@ module.exports = {
         category: 'masker',
         quantity: 40,
         weight: 1,
+        price: 20000,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -16,6 +17,7 @@ module.exports = {
         category: 'masker',
         quantity: 40,
         weight: 1,
+        price: 90000,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -24,6 +26,7 @@ module.exports = {
         category: 'masker',
         quantity: 40,
         weight: 1,
+        price: 10000,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -32,6 +35,7 @@ module.exports = {
         category: 'masker',
         quantity: 40,
         weight: 1,
+        price: 5000,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -40,6 +44,7 @@ module.exports = {
         category: 'masker',
         quantity: 40,
         weight: 1,
+        price: 100000,
         createdAt: new Date(),
         updatedAt: new Date()
       }
