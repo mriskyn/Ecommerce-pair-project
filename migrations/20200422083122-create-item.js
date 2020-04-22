@@ -23,6 +23,9 @@ module.exports = {
       price: {
         type: Sequelize.INTEGER
       },
+      tag: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

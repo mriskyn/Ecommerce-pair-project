@@ -9,6 +9,7 @@ module.exports = {
         quantity: 40,
         weight: 1,
         price: 20000,
+        tag: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -18,6 +19,7 @@ module.exports = {
         quantity: 40,
         weight: 1,
         price: 90000,
+        tag: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -27,6 +29,7 @@ module.exports = {
         quantity: 40,
         weight: 1,
         price: 10000,
+        tag: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -36,6 +39,7 @@ module.exports = {
         quantity: 40,
         weight: 1,
         price: 5000,
+        tag: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -45,6 +49,7 @@ module.exports = {
         quantity: 40,
         weight: 1,
         price: 100000,
+        tag: false,
         createdAt: new Date(),
         updatedAt: new Date()
       }

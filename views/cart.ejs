@@ -2,7 +2,8 @@
 <body>
   <%- include('./partial/navbar') %>
   <br>
-  <h1 align="left">List Items</h1>
+  <h1 align="center">Your Cart</h1>
+  <br><br>
   <% if (data.length) { %>
     <table class="table table-sm table-dark">
       <thead class="table table-sm table-dark">
@@ -24,22 +25,15 @@
           <td><%= list.weight %></td>
           <td><%= list.price %></td>
           <td style="text-align: right;">
-            <% if(list.tag == true){ %>
-              <a href="/customers/remove/<%=list.id%>"><button type="button" class="btn btn-danger">Remove from Cart</button></a>  
-              <%}%>
-              <a href="/customers/add/<%=list.id%>"><button type="button" class="btn btn-primary">Add to Cart</button></a> 
-            </td>
+            <a href="/carts/remove/<%=list.id%>"><button type="button" class="btn btn-danger">Remove from Cart</button></a> 
+          </td>
       <% }) %>
     </tbody>
   </table>
-  <br>
-  <div class="container-fluid text-right mb-1">
-    <a href="/carts"><button type="button" class="btn btn-success">Check Cart</button></a>
-  </div>
+  <a href="#"><button type="button" class="btn btn-success">Check Out</button></a>
   <% }else{ %>
-
     <div class="alert alert-dark" role="alert">
-      <h3 style="text-align: center;">List not found!!</h3>
+      <h3 style="text-align: center;">Your Cart is Empty</h3>
     </div>
     <%}%>
     </tbody>
