@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {sequelize});
   CustomerItem.associate = function(models) {
     // associations can be defined here
-    
+    CustomerItem.belongsTo(models.Customer)
+    CustomerItem.belongsTo(models.Item)
   };
   return CustomerItem;
 };

@@ -15,7 +15,12 @@ class CustomerController {
   static add_item(req,res){
     Item.update({
       tag: true
-    }, {where: {id: req.params.id}})
+    }, 
+    {
+      where: {
+        id: req.params.id
+      }
+    })
     .then(()=>{
       return Item.findAll({order : [['name', 'ASC']]})
     })
