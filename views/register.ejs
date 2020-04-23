@@ -1,0 +1,65 @@
+<%- include('./partial/header') %>
+
+<body>
+    <%- include('./partial/navbar') %>
+    <br><br>
+    <h1 align="center">Register</h1>
+    <form action="/register" method="POST">
+        <form>
+            <div class="form-group">
+                <label>First Name</label>
+                <input class="form-control" type="text" name="first_name" placeholder="e.g: John">
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input class="form-control" type="text" name="last_name" placeholder="e.g: Doe">
+            </div>
+            <div class="form-group">
+                <label>User Name</label>
+                <input class="form-control" type="text" name="username" placeholder="e.g: John">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" type="password" name="password" placeholder="e.g: Doe">
+            </div>
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                    <label class="form-check-label" for="male">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                    <label class="form-check-label" for="female">
+                        Female
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <select name="location" class="form-control" id="location">
+                    <option value="" hidden>Choose location...</option>
+                    <option value="east_jakarta">East Jakarta</option>
+                    <option value="west_jakarta">West Jakarta</option>
+                    <option value="center_jakarta">Center Jakarta</option>
+                    <option value="south_jakarta">South Jakarta</option>
+                    <option value="north_jakarta">North Jakarta</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Age</label>
+                <input class="form-control" name="age" type="number" placeholder="e.g: 17">
+            </div>
+
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/register">
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </a>
+        </form>
+    </form>
+</body>
+
+</html>

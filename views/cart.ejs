@@ -1,39 +1,41 @@
 <%- include('./partial/header') %>
+
 <body>
   <%- include('./partial/navbar') %>
   <br>
   <h1 align="center">Your Cart</h1>
   <br><br>
   <% if (data.length) { %>
-    <table class="table table-sm table-dark">
-      <thead class="table table-sm table-dark">
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Category</th>
-          <th scope="col">Weight</th>
-          <th scope="col">Price</th>
-          <th scope="col" style="text-align: center;">Action</th>
-        </tr>
+  <table class="table table-sm table-dark">
+    <thead class="table table-sm table-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Price</th>
+        <th scope="col" style="text-align: center;">Action</th>
+      </tr>
     </thead>
     <tbody class="table table-sm table-light">
       <% data.forEach(list=>{ %>
-        <tr>
-          <td><%= list.name %></td>
-          <td><%= list.category %></td>
-          <td><%= list.weight %></td>
-          <td><%= list.price %></td>
-          <td style="text-align: right;">
-            <a href="/carts/remove/<%=list.id%>"><button type="button" class="btn btn-danger">Remove from Cart</button></a> 
-          </td>
-      <% }) %>
+      <tr>
+        <td><%= list.name %></td>
+        <td><%= list.category %></td>
+        <td><%= list.weight %></td>
+        <td><%= list.price %></td>
+        <td style="text-align: right;">
+          <a href="/carts/remove/<%=list.id%>"><button type="button" class="btn btn-danger">Remove from
+              Cart</button></a>
+        </td>
+        <% }) %>
     </tbody>
   </table>
   <a href="#"><button type="button" class="btn btn-success">Check Out</button></a>
   <% }else{ %>
-    <div class="alert alert-dark" role="alert">
-      <h3 style="text-align: center;">Your Cart is Empty</h3>
-    </div>
-    <%}%>
+  <div class="alert alert-dark" role="alert">
+    <h3 style="text-align: center;">Your Cart is Empty</h3>
+  </div>
+  <%}%>
     </tbody>
   </table>
 </body>

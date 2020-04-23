@@ -1,6 +1,6 @@
-class ChatController{
-    static page(req, res){
-        res.render('chat')    
+class ChatController {
+    static page(req, res) {
+        res.render('chat')
     }
 }
 

@@ -1,35 +1,38 @@
 <%- include('./partial/header') %>
+
 <body>
   <%- include('./partial/navbar') %>
   <br>
   <h1 align="left">List Items</h1>
   <% if (data.length) { %>
-    <table class="table table-sm table-dark">
-      <thead class="table table-sm table-dark">
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Category</th>
-          <th scope="col">Quantity</th>
-          <th scope="col">Weight</th>
-          <th scope="col">Price</th>
-          <th scope="col" style="text-align: center;">Action</th>
-        </tr>
+  <table class="table table-sm table-dark">
+    <thead class="table table-sm table-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Price</th>
+        <th scope="col" style="text-align: center;">Action</th>
+      </tr>
     </thead>
     <tbody class="table table-sm table-light">
       <% data.forEach(list=>{ %>
-        <tr>
-          <td><%= list.name %></td>
-          <td><%= list.category %></td>
-          <td><%= list.quantity %></td>
-          <td><%= list.weight %></td>
-          <td><%= list.price %></td>
-          <td style="text-align: right;">
-            <% if(list.tag == true){ %>
-              <a href="/customers/remove/<%=list.id%>"><button type="button" class="btn btn-danger">Remove from Cart</button></a>  
-              <%}%>
-              <a href="/customers/add/<%=list.id%>"><button type="button" class="btn btn-primary">Add to Cart</button></a> 
-            </td>
-      <% }) %>
+      <tr>
+        <td><%= list.name %></td>
+        <td><%= list.category %></td>
+        <td><%= list.quantity %></td>
+        <td><%= list.weight %></td>
+        <td><%= list.price %></td>
+        <td style="text-align: right;">
+          <% if(list.tag == true){ %>
+          <a href="/customers/remove/<%=list.id%>"><button type="button" class="btn btn-danger">Remove from
+              Cart</button></a>
+          <%}%>
+              <a href="/customers/add/<%=list.id%>"><button type="button" class="btn btn-primary">Add to
+            Cart</button></a>
+        </td>
+        <% }) %>
     </tbody>
   </table>
   <br>
@@ -38,10 +41,10 @@
   </div>
   <% }else{ %>
 
-    <div class="alert alert-dark" role="alert">
-      <h3 style="text-align: center;">List not found!!</h3>
-    </div>
-    <%}%>
+  <div class="alert alert-dark" role="alert">
+    <h3 style="text-align: center;">List not found!!</h3>
+  </div>
+  <%}%>
     </tbody>
   </table>
 </body>
