@@ -6,7 +6,7 @@ module.exports = {
       {
         name: 'Surgical Mask',
         category: 'masker',
-        quantity: 40,
+        quantity: 75,
         weight: 1,
         price: 20000,
         tag: false,
@@ -16,7 +16,7 @@ module.exports = {
       {
         name: 'N95 Mask',
         category: 'masker',
-        quantity: 40,
+        quantity: 90,
         weight: 1,
         price: 90000,
         tag: false,
@@ -26,7 +26,7 @@ module.exports = {
       {
         name: 'Sensi Mask',
         category: 'masker',
-        quantity: 40,
+        quantity: 200,
         weight: 1,
         price: 10000,
         tag: false,
@@ -34,11 +34,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        name: 'John Doe',
-        category: 'masker',
-        quantity: 40,
+        name: 'Detol Shower Gel',
+        category: 'Soap',
+        quantity: 30,
         weight: 1,
-        price: 5000,
+        price: 25000,
         tag: false,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -46,7 +46,7 @@ module.exports = {
       {
         name: 'P95 Mask',
         category: 'masker',
-        quantity: 40,
+        quantity: 100,
         weight: 1,
         price: 100000,
         tag: false,

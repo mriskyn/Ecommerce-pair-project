@@ -5,32 +5,33 @@
   <br>
   <h1 align="center">Your Cart</h1>
   <br><br>
-  <% if (data.length) { %>
+  <% if (data.Items.length) { %>
   <table class="table table-sm table-dark">
     <thead class="table table-sm table-dark">
       <tr>
         <th scope="col">Name</th>
         <th scope="col">Category</th>
-        <th scope="col">Weight</th>
+        <th scope="col">Quantity</th>
         <th scope="col">Price</th>
+        <th scope="col">Total Price</th>
         <th scope="col" style="text-align: center;">Action</th>
       </tr>
     </thead>
     <tbody class="table table-sm table-light">
-      <% data.forEach(list=>{ %>
+      <% data.Items.forEach(list=>{ %>
       <tr>
         <td><%= list.name %></td>
         <td><%= list.category %></td>
-        <td><%= list.weight %></td>
-        <td><%= list.price %></td>
+        <td><%= list.CustomerItem.quantity %></td>
+        <td><%= toRupiah(list.price) %></td>
+        <td><%= toRupiah(list.price * list.CustomerItem.quantity) %></td>
         <td style="text-align: right;">
-          <a href="/carts/remove/<%=list.id%>"><button type="button" class="btn btn-danger">Remove from
-              Cart</button></a>
+          <a href="/carts/remove/<%=list.id%>"><button type="button" class="btn btn-danger">Remove from Cart</button></a>
         </td>
         <% }) %>
     </tbody>
   </table>
-  <a href="#"><button type="button" class="btn btn-success">Check Out</button></a>
+  <a href="/carts/checkout"><button type="button" class="btn btn-success">Check Out</button></a>
   <% }else{ %>
   <div class="alert alert-dark" role="alert">
     <h3 style="text-align: center;">Your Cart is Empty</h3>

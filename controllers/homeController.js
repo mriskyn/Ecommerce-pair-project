@@ -3,7 +3,8 @@ const { Customer } = require('../models')
 class HomeController {
 
   static getHome(req, res) {
-    res.render('home')
+    let error =''
+    res.render('home', {error})
   }
 
   static getLogin(req, res) {
@@ -15,6 +16,7 @@ class HomeController {
     .then(data => {
       data.map(el => {
         if(el.username === req.body.username && el.password === req.body.password){
+          req.session.userId = el.id
           res.redirect('/')
         }
       })

@@ -3,55 +3,41 @@
 <body>
   <%- include('./partial/navbar') %>
   <br>
-  <div>
-    <h2><%= listMovie.name %></h2>
-  </div>
-  <br>
-  <div>
-    <form action="/movies/addcast/<%= listMovie.id %>" method="POST">
-      <input name="MovieId" value="<%= listMovie.id %>" hidden>
-      <div class="form-group">
-        <label>Actor</label>
-        <select name="CastId" class="form-control">
-          <option selected disabled>Select Cast</option>
-          <% listCast.forEach(list=>{ %>
-          <option value="<%= list.id %>"><%= list.full_name %></option>
-          <% }) %>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Role</label>
-        <input name="role" type="text" class="form-control" placeholder="e.g: Pemeran Utama Wanita">
-      </div>
-      <button type="submit" class="btn btn-primary">Save</button>
-      <button type="reset" class="btn btn-secondary">Reset</button>
-    </form>
-  </div>
-  <br>
-  <div>
-    <h1>List Cast</h1>
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Actor</th>
-          <th scope="col">Role</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% for(let i = 0; i < data.length; i++){ %>
-        <% for(let j = 0; j < listCast.length; j++){ %>
-        <% if(listCast[j].id === data[i].CastId){ %>
-        <tr>
-          <td><%= listCast[j].full_name %></td>
-          <%break%>
-          <% } %>
-          <% } %>
-          <td><%= data[i].role %></td>
-        </tr>
-        <% } %>
-      </tbody>
-    </table>
-  </div>
-</body>
+  <h1 align="center">INVOICE</h1>
+  <div class="row" ><h4>Name:  <%=data.first_name%> <%=data.last_name%></h4></div>
+  <div class="row" ><h4>Age:  <%=data.age%></h4></div>
+  <div class="row" ><h4>Location:  <%=data.location%></h4></div>
 
+  <br><br>
+  <table class="table">
+    <thead class="table table-sm table-primary">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Total Price</th>
+      </tr>
+    </thead>
+    <tbody class="table table-sm table-light">
+      <%let total = 0%>
+      <% data.Items.forEach(list=>{ %>
+      <tr>
+        <td><%= list.name %></td>
+        <td><%= list.category %></td>
+        <td><%= list.CustomerItem.quantity %></td>
+        <td><%= toRupiah(list.price) %></td>
+        <td><%= toRupiah(list.price * list.CustomerItem.quantity) %></td>
+        <% total += list.price * list.CustomerItem.quantity %>  
+      </tr>
+      <% }) %>
+      <tr>
+        <th scope="col" colspan="4">Total</th>
+        <td><%=toRupiah(total)%></td>
+      </tr>
+    </tbody>
+  </table>
+    </tbody>
+  </table>
+</body>
 </html>

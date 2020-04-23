@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   const Model = Sequelize.Model
 
   class Customer extends Model {
-
+    
   }
 
 
@@ -19,8 +19,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {sequelize});
   Customer.associate = function(models) {
     // associations can be defined here
-    // Customer.belongsToMany(models.Item, {through:models.CustomerItem})
-    Customer.hasMany(models.CustomerItem)
+    Customer.belongsToMany(models.Item, {through:models.CustomerItem})
+    // Customer.hasMany(models.CustomerItem)
   };
   return Customer;
 };

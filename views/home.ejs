@@ -2,10 +2,21 @@
 
 <body>
   <%- include('./partial/navbar') %>
+  <% if(error.length>3){ %>
+    <div class="alert alert-danger" role="alert">
+      <%=error%>
+    </div>
+  <% } else {%>
+    <div class="alert alert-success" role="alert">
+      Selamat datang di COVID Market
+    </div>
+  <% } %>
+
   <div class="jumbotron">
     <h1 class="display-4" align="center">Welcome to COVID Market</h1>
     <hr class="my-4">
-    <ul style="margin: 0 20%;" ;">
+    <ul style="margin: 0 40%;" ;">
+    <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
 
     </ul>
   </div>

@@ -4,10 +4,7 @@ const Controller = require('../controllers/customerController')
 const router = express.Router()
 
 router.get('/', Controller.read)
-router.get('/add/:id', Controller.add_item)
-router.get('/remove/:id', Controller.remove_item)
-
-
+router.post('/add/:id', Controller.add_item)
 
 
 module.exports = router
