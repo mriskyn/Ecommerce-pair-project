@@ -1,0 +1,36 @@
+<%- include('./partial/header') %>
+
+<body>
+    <%- include('./partial/navbar') %>
+
+    <body>
+        <div class="jumbotron">
+            <div class="chat">
+                <h4>Admin:</h4>
+                <p>Ada Yang bisa kami bantu?</p>
+            </div>
+
+            <form action="">
+                <input id="m" autocomplete="off" /><button>Send</button>
+    </body>
+    </form>
+    <script>
+        $(function () {
+            var socket = io();
+            $('form').submit(function (e) {
+                e.preventDefault();
+                $('.chat').append('<h4>Client:</h4>', `<p>${$('#m').val()}</p>`);
+                socket.emit('chat message', $('#m').val());
+                $('#m').val('');
+
+                return false;
+            });
+            socket.on('chat message2', function (msg) {
+                $('.chat').append('<h4>Admin:</h4>', $('<p>').text(msg));
+            });
+        });
+    </script>
+</body>
+</div>
+
+</html>
