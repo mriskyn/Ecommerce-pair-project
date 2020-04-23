@@ -19,6 +19,11 @@ module.exports = {
       keywords: 'harga',
       createdAt: new Date(),
       updatedAt: new Date()
+    }, {
+      message: 'Silahkan klik link home',
+      keywords: 'home',
+      createdAt: new Date(),
+      updatedAt: new Date()
     }], {});
   },
 

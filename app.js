@@ -23,16 +23,17 @@ app.use('/', router)
 
 io.on('connection', (socket) => {
   socket.on('chat message', (msg) => {
+    console.log('message on')
     if (msg.includes(' ')) {
       msg.split(' ')
     }
     Chat.findAll({})
       .then(data => {
         let check = false
-        data.map(el => {
-          if (msg.includes(el.keywords)) {
+        data.map(chat => {
+          if (msg.includes(chat.keywords)) {
             check = true
-            io.emit('chat message2', el.message)
+            io.emit('chat message2', chat.message)
           }
         })
 
