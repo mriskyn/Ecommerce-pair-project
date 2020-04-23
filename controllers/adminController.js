@@ -1,12 +1,12 @@
 const {CustomerItem, Customer, Item} = require('../models')
 
 class AdminController{
+
     static datas(req, res){
         CustomerItem.findAll({
             include: [Customer, Item]
         })
         .then(data => {
-            // console.log(data)
             res.render('admin', {data})
         })
         .catch(error => {

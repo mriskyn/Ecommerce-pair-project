@@ -2,12 +2,9 @@ const { Item, Customer, CustomerItem } = require('../models')
 const Convert = require('../helpers/convert')
 
 class CartController {
-
   static readCart(req, res) {
-    // res.send(req.session)
     Customer.findByPk(req.session.userId, { include: [{ model: Item }] })
       .then(data => {
-        // res.send(data)
         res.render('cart', { data, Convert })
       })
       .catch(error => {
@@ -16,7 +13,6 @@ class CartController {
   }
 
   static remove_item(req, res) {
-    // res.send(req.params.id)
     CustomerItem.destroy({ where: { ItemId: req.params.id } })
       .then(() => {
         res.redirect('/carts')
@@ -27,7 +23,6 @@ class CartController {
   }
 
   static checkout(req, res) {
-    // res.send(req.body)
     Customer.findByPk(req.session.userId, { include: [{ model: Item }] })
       .then(data => {
         // res.send(data)

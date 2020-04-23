@@ -4,7 +4,6 @@ const Convert = require('../helpers/convert')
 class CustomerController {
 
   static read(req, res) {
-    // console.log(req.session)
     Item.findAll({ order: [['name', 'ASC']] })
       .then(data => {
         res.render('itemsList', { data, Convert })
@@ -15,7 +14,6 @@ class CustomerController {
   }
 
   static add_item(req, res) {
-    // res.send(req.session)
     CustomerItem.findOne({ where: { ItemId: req.body.item_id } })
       .then(data => {
         if (!data) {
@@ -24,7 +22,6 @@ class CustomerController {
             ItemId: req.body.item_id,
             quantity: req.body.quantity
           })
-          // res.send('asd')
         } else {
           console.log(req.body)
           return CustomerItem.update({

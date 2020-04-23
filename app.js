@@ -37,7 +37,7 @@ io.on('connection', (socket) => {
           }
         })
 
-        if(!check){
+        if (!check) {
           io.emit('chat message2', 'keywords salah')
         }
       })
