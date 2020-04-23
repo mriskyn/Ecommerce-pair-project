@@ -30,10 +30,15 @@ class CartController {
   }
 
   static checkout(req,res){
-    let dataItem
-    let dataCustomer
-    let dataTengah
-    Item.findAll()
+    // res.send('asd')
+    res.send(req.body)
+    // Item.findAll({where: {tag: true}})
+    // .then(data=>{
+    //   // res.render('cart', {data})
+    // })
+    // .catch(error=>{
+    //   res.render('error', {error})
+    // })
   }
 }
 

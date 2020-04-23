@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.get('/', Controller.readCart)
 router.get('/remove/:id', Controller.remove_item)
-router.get('/checkout', Controller.checkout)
+router.post('/checkout', Controller.checkout)
 
 
 module.exports = router
