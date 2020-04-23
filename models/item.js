@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
   const Model = Sequelize.Model
 
   class Item extends Model{
-
+    // totalPrice(){
+    //   return this.quantity * this.price
+    // }
   }
 
 

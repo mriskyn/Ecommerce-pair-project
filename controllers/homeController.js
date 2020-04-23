@@ -3,8 +3,8 @@ const { Customer } = require('../models')
 class HomeController {
 
   static getHome(req, res) {
-    let error =''
-    res.render('home', {error})
+    let error = ''
+    res.render('home', { error })
   }
 
   static getLogin(req, res) {
@@ -13,18 +13,18 @@ class HomeController {
 
   static postLogin(req, res) {
     Customer.findAll({})
-    .then(data => {
-      data.map(el => {
-        if(el.username === req.body.username && el.password === req.body.password){
-          req.session.userId = el.id
-          res.redirect('/')
-        }
+      .then(data => {
+        data.map(el => {
+          if (el.username === req.body.username && el.password === req.body.password) {
+            req.session.userId = el.id
+            res.redirect('/')
+          }
+        })
+        res.render('error', { error: 'Username / password salah!' })
       })
-      res.render('error', {error: 'Username / password salah!'})
-    })
-    .catch(error => {
-      res.render('error', {error: 'Username / password salah!'})
-    })
+      .catch(error => {
+        res.render('error', { error: 'Username / password salah!' })
+      })
   }
 
   static getRegister(req, res) {

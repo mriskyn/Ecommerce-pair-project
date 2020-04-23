@@ -26,8 +26,8 @@
         <td><%= list.name %></td>
         <td><%= list.category %></td>
         <td><%= list.CustomerItem.quantity %></td>
-        <td><%= toRupiah(list.price) %></td>
-        <td><%= toRupiah(list.price * list.CustomerItem.quantity) %></td>
+        <td><%= Convert.toRupiah(list.price) %></td>
+        <td><%= Convert.toRupiah(list.price * list.CustomerItem.quantity) %></td>
         <% total += list.price * list.CustomerItem.quantity %>  
       </tr>
       <% }) %>

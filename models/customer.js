@@ -4,10 +4,10 @@ module.exports = (sequelize, DataTypes) => {
   const Model = Sequelize.Model
 
   class Customer extends Model {
-    get full_name(){
+    full_name(){
       return `${this.first_name} ${this.last_name}` 
     }
-    get exactLocation(){
+    exactLocation(){
       return this.location.split('_').join(' ')      
     }
   }

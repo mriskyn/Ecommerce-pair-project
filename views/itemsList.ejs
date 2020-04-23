@@ -23,7 +23,7 @@
         <td><%= list.category %></td>
         <td><%= list.quantity %></td>
         <td><%= list.weight %></td>
-        <td><%= list.price %></td>
+        <td><%= Convert.toRupiah(list.price) %></td>
         <form action="/customers/add/<%=list.id%>" method="POST">
         <td style="text-align: right;">
           <input type="number" name="item_id" hidden value="<%=list.id%>">
