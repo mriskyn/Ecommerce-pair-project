@@ -28,12 +28,17 @@ io.on('connection', (socket) => {
     }
     Chat.findAll({})
       .then(data => {
+        let check = false
         data.map(el => {
           if (msg.includes(el.keywords)) {
+            check = true
             io.emit('chat message2', el.message)
           }
         })
-        io.emit('chat message2', 'keywords salah')
+
+        if(!check){
+          io.emit('chat message2', 'keywords salah')
+        }
       })
       .catch(error => {
         res.render('error', { error })

@@ -4,6 +4,7 @@ const Convert = require('../helpers/convert')
 class CustomerController {
 
   static read(req, res) {
+    // console.log(req.session)
     Item.findAll({ order: [['name', 'ASC']] })
       .then(data => {
         res.render('itemsList', { data, Convert })

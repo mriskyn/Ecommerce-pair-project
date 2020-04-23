@@ -3,6 +3,7 @@ const HomeController = require('../controllers/homeController')
 const customerRouter = require('./customer')
 const cartRouter = require('./cart')
 const chatRouter = require('./chat')
+const adminRouter = require('./admin')
 
 
 const router = express.Router()
@@ -25,9 +26,16 @@ function checkIn(req, res, next){
         res.render('home', {error: 'Harus Login!'})
     }
 }
-// router.use(checkUser)
+
+function checkOut(req, res, next){
+    req.session.token = false
+    next()
+}
+
+router.use('/login/admin', adminRouter)
 router.get('/login', HomeController.getLogin)
 router.post('/login', checkUser, HomeController.postLogin)
+router.get('/logout', checkOut, HomeController.logout)
 router.get('/register', HomeController.getRegister)
 router.post('/register', HomeController.postRegister)
 

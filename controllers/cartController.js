@@ -31,6 +31,7 @@ class CartController {
     Customer.findByPk(req.session.userId, { include: [{ model: Item }] })
       .then(data => {
         // res.send(data)
+        console.log(data)
         res.render('checkout', { data, Convert })
       })
       .catch(error => {

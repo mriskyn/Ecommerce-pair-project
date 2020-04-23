@@ -4,9 +4,9 @@
   <%- include('./partial/navbar') %>
   <br>
   <h1 align="center">INVOICE</h1>
-  <div class="row" ><h4>Name:  <%=data.full_name%></h4></div>
+  <div class="row" ><h4>Name:  <%=data.full_name()%></h4></div>
   <div class="row" ><h4>Age:  <%=data.age%></h4></div>
-  <div class="row" ><h4>Location:  <%=data.exactLocation%></h4></div>
+  <div class="row" ><h4>Location:  <%=data.exactLocation()%></h4></div>
 
   <br><br>
   <table class="table">
@@ -33,7 +33,7 @@
       <% }) %>
       <tr>
         <th scope="col" colspan="4">Total</th>
-        <td><%=toRupiah(total)%></td>
+        <td><%=Convert.toRupiah(total)%></td>
       </tr>
     </tbody>
   </table>

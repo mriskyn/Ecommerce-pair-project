@@ -1,0 +1,44 @@
+<%- include('./partial/header') %>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/logout">Logout <span class="sr-only">(current)</span></a>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <h1 align="left">Customer with Items</h1>
+    <% if (data.length) { %>
+    <table class="table table-sm table-dark">
+        <thead class="table table-sm table-dark">
+            <tr>
+                <th scope="col">Customer</th>
+                <th scope="col">Item</th>
+                <th scope="col">Quantity</th>
+            </tr>
+        </thead>
+        <tbody class="table table-sm table-light">
+            <% data.forEach(list=>{ %>
+            <tr>
+                <td><%= list.Customer.full_name() %></td>
+                <td><%= list.Item.name %></td>
+                <td><%= list.Item.quantity %></td>
+                </form>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <br>
+
+    <% }else{ %>
+
+    <div class="alert alert-dark" role="alert">
+        <h3 style="text-align: center;">List not found!!</h3>
+    </div>
+    <%}%>
+    </tbody>
+  </table>
+</body>
+</html>

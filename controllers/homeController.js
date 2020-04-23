@@ -1,4 +1,4 @@
-const { Customer } = require('../models')
+const { Customer, Admin } = require('../models')
 
 class HomeController {
 
@@ -20,10 +20,24 @@ class HomeController {
             res.redirect('/')
           }
         })
-        res.render('error', { error: 'Username / password salah!' })
+        return Admin.findAll({})
+      })
+      .then(data => {
+        let check = false
+        data.map(el => {
+          if (el.username === req.body.username && el.password === req.body.password) {
+            check = true
+            req.session.userId = el.id
+            res.redirect('/login/admin')
+          }
+        })
+
+        if(!check){
+          res.render('error', { error: 'Username / password salah!' })
+        }
       })
       .catch(error => {
-        res.render('error', { error: 'Username / password salah!' })
+        res.render('error', { error })
       })
   }
 
@@ -39,6 +53,10 @@ class HomeController {
       .catch(error => {
         res.render('error', { error })
       })
+  }
+
+  static logout(req, res) {
+    res.redirect('/login')
   }
 
   static notFound(req, res) {
