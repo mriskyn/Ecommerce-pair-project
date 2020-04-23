@@ -8,7 +8,7 @@ const { Chat } = require('./models');
 const app = express()
 const server = http.createServer(app)
 const io = socketIO(server)
-const port = 3000
+const PORT = process.env.PORT || 3000
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }))
@@ -47,6 +47,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(port, () => {
-  console.log(`this app running on port: ${port}`)
+server.listen(PORT, () => {
+  console.log(`this app running on PORT: ${PORT}`)
 })
