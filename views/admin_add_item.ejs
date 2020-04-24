@@ -1,0 +1,38 @@
+<%- include('./partial/header') %>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 align="left">List Items</h1>
+            <table class="table table-sm table-dark">
+                <thead class="table table-sm table-dark">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col" style="text-align: right; margin-right: 10px;">Add</th>
+                    </tr>
+                </thead>
+                <tbody class="table table-sm table-light">
+                    <% data.forEach(item=>{ %>
+                    <tr>
+                        <td><%= item.name %></td>
+                        <td><%= item.quantity %> </td>
+                        <form action="add" method="POST">
+                            <td style="text-align: right;">
+                                <input type="number" name="id" hidden value=<%=item.id%>>
+                                <input type="number" name="quantity" hidden value=<%=item.quantity%>>
+                                <input type="number" name="quantity" placeholder="Amount">
+                                <button type="submit" class="btn btn-primary">Add Item</button>
+                            </td>
+                        </form>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+        <a href="/login/admin">
+            <button type="button" class="btn btn-outline-primary">Back</button>
+        </a>
+    </div>
+</body>
+
+</html>
