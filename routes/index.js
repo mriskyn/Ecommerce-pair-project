@@ -32,8 +32,8 @@ function checkOut(req, res, next){
     next()
 }
 
-router.use('/login/admin', adminRouter)
 router.get('/login', HomeController.getLogin)
+router.use('/login/admin', adminRouter)
 router.post('/login', checkUser, HomeController.postLogin)
 router.get('/logout', checkOut, HomeController.logout)
 router.get('/register', HomeController.getRegister)
